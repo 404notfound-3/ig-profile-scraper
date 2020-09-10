@@ -1,0 +1,8 @@
+pytz
+stem
+slack_webhook
+selenium
+bs4
+pyvirtualdisplay
+requests
+pysocks
