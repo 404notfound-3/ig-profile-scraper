@@ -3,7 +3,6 @@ import time
 import json
 import random
 import pickle
-from sys import exit
 from stem import Signal
 from requests import get
 from pytz import timezone
@@ -172,12 +171,14 @@ def ig_login(email, password):
     a = browser.find_element_by_xpath('//*[@id="loginForm"]/div/div[1]/div/label/input')
     a.click()
     time.sleep(3.7)
-    for words in email: a.send_keys(words)
+    for words in email:
+        a.send_keys(words)
     time.sleep(0.3)
     b = browser.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/div/label/input')
     b.click()
     time.sleep(1.6)
-    for words in password: b.send_keys(words)
+    for words in password:
+        b.send_keys(words)
     time.sleep(0.25)
     browser.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button/div').click()
     print(f"\nSuccessfully logged in {email}...")
@@ -188,7 +189,8 @@ def ig_login(email, password):
         time.sleep(15)
         browser.find_element_by_xpath('/html/body/div[4]/div/div/div/div[3]/button[2]').click()
         time.sleep(15)
-    except exception as e: pass ## Needs to be solved
+    except:
+        pass ## Needs to be solved
 
 ## request to our browser to take and save an screenshot "smartly".
 t1 = None

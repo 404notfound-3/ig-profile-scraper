@@ -3,15 +3,14 @@ import time
 import json
 import random
 import pickle
-from sys import exit
 from stem import Signal
 from requests import get
 from pytz import timezone
-from os import popen, path
 from datetime import datetime
 from selenium import webdriver
 from slack_webhook import Slack
 from traceback import format_exc
+from os import popen, path, system
 from bs4 import BeautifulSoup as bs
 from stem.control import Controller
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
@@ -32,9 +31,9 @@ ids = {
 usernames = ["<<ADD_INSTAGRAM_USERNAMES_IN_THIS_LIST>>"]
 
 ## Waking up Tor executables, Paste full PATH here of tor.exe in your system or skip this if you are using linux.
-tor_exe = popen(r"<<FULL_PATH_OF_TOR.EXE>>")
+system(r"C:\Program Files (x86)\Tor Browser\Browser\TorBrowser\Tor\tor.exe -f .\etc\torrc")
 
-## Slack webhook, This will help you to get notified about errors and exceptions while running this scraper.
+## Slack webhook, This will help you to get notified about errors and exceptions.
 slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
 
 ## Proxies for request over Tor
@@ -76,7 +75,6 @@ profile.set_preference("permissions.default.image", 2) ## I Disabled image loadi
 ## Starting firefox browser using profile we created above.
 browser = webdriver.Firefox(firefox_profile = profile)
 browser.delete_all_cookies() ## just in case if your browser...
-
 
 
 ## this function will take a soup as input and will return some valuable data.
@@ -169,12 +167,14 @@ def ig_login(email, password):
     a = browser.find_element_by_xpath('//*[@id="loginForm"]/div/div[1]/div/label/input')
     a.click()
     time.sleep(3.7)
-    for words in email: a.send_keys(words)
+    for words in email:
+        a.send_keys(words)
     time.sleep(0.3)
     b = browser.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/div/label/input')
     b.click()
     time.sleep(1.6)
-    for words in password: b.send_keys(words)
+    for words in password:
+        b.send_keys(words)
     time.sleep(0.25)
     browser.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button/div').click()
     print(f"\nSuccessfully logged in {email}...")
@@ -185,7 +185,8 @@ def ig_login(email, password):
         time.sleep(15)
         browser.find_element_by_xpath('/html/body/div[4]/div/div/div/div[3]/button[2]').click()
         time.sleep(15)
-    except exception as e: pass ## Needs to be solved
+    except:
+        pass ## Needs to be solved
 
 ## request to our browser to take and save an screenshot "smartly".
 t1 = None
