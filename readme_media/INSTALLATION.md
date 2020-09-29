@@ -20,10 +20,6 @@
     WebDriver implementation for Firefox
     ```
 
-* Download latest [Tor browser](https://torproject.org/) for windows from official [website](https://torproject.org/).
-
-* Run the installer and carefully select the installation PATH, your user's desktop path will be default.
-
 * Git clone or Download [this project](https://github.com/404notfound-3/ig-profile-scraper) and run below command in project directory.
     ```
     pip install -r requirements.txt
@@ -45,10 +41,6 @@
         ```
         usernames = ["<USERNAME1>", "<USERNAME2>"]
         ```
-    * Copy full path of tor.exe from Tor installation directory and add it in tor_exe.
-        ```
-        tor_exe = os.popen(r"C:\Program Files (x86)\Tor Browser\Browser\TorBrowser\Tor\tor.exe")
-        ```
     * Add your Slack webhook URL to get notified about errors and exceptions while running this scraper.
         ```
         slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
@@ -60,10 +52,6 @@
     ```
     sudo apt-get install firefox xvfb tor
     ```
-<!-- * Verify installation
-    ```
-    which firefox
-    ``` -->
 * Download and install geckodriver for linux.
     ```
     wget https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-linux64.tar.gz

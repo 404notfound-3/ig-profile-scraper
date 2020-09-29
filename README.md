@@ -2,9 +2,9 @@
 [![made-with-python](https://img.shields.io/badge/Made%20With-Python-blue)](https://www.python.org/)
 [![GitHub license](https://img.shields.io/github/license/404notfound-3/ig-profile-scraper)](#License)
 [![GitHub stars](https://img.shields.io/github/stars/404notfound-3/ig-profile-scraper)](https://github.com/404notfound-3/ig-profile-scraper/stargazers)
+[![CodeFactor](https://www.codefactor.io/repository/github/404notfound-3/ig-profile-scraper/badge/master)](https://www.codefactor.io/repository/github/404notfound-3/ig-profile-scraper/overview/master)
 [![GitHub last commit](https://img.shields.io/github/last-commit/404notfound-3/ig-profile-scraper)](https://github.com/404notfound-3/ig-profile-scraper/commits/master)
 [![GitHub issues](https://img.shields.io/github/issues/404notfound-3/ig-profile-scraper)](https://github.com/404notfound-3/ig-profile-scraper/issues)
-[![GitHub closed issues](https://img.shields.io/github/issues-closed/404notfound-3/ig-profile-scraper)](https://github.com/404notfound-3/ig-profile-scraper/issues?q=is%3Aissue+is%3Aclosed)
 ![welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
 ![GitHub repo size](https://img.shields.io/github/repo-size/404notfound-3/ig-profile-scraper)
 
@@ -52,10 +52,7 @@ You can get step by step detailed Installation steps [here](readme_media/INSTALL
         ```
         usernames = ["<USERNAME1>", "<USERNAME2>"]
         ```
-    * Copy full path of tor.exe from Tor installation directory and replace it in tor_exe (skip this step in linux).
-        ```
-        tor_exe = os.popen(r"C:\Program Files (x86)\Tor Browser\Browser\TorBrowser\Tor\tor.exe")
-        ```
+
     * Edit torrc file and Restart Tor service.
         ```
         sudo echo -e "SOCKSPort 9050\nControlPort 9051\nCookieAuthentication 1\n$(cat /etc/tor/torrc)" > /etc/tor/torrc
@@ -66,11 +63,7 @@ You can get step by step detailed Installation steps [here](readme_media/INSTALL
         ```
         slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
         ```
-* Edit torrc file and Restart Tor service (skip this step in windows).
-    ```
-    sudo echo -e "SOCKSPort 9050\nControlPort 9051\nCookieAuthentication 1\n$(cat /etc/tor/torrc)" > /etc/tor/torrc
-    sudo service tor restart
-    ```
+
 
 Congratulations! you are ready to go, now run `windows.py` or `linux.py`
 

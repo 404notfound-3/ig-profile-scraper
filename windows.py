@@ -31,7 +31,7 @@ ids = {
 usernames = ["<<ADD_INSTAGRAM_USERNAMES_IN_THIS_LIST>>"]
 
 ## Waking up Tor executables, Paste full PATH here of tor.exe in your system or skip this if you are using linux.
-system(r"C:\Program Files (x86)\Tor Browser\Browser\TorBrowser\Tor\tor.exe -f .\etc\torrc")
+popen(r".\Tor\tor.exe -f .\Tor\torrc")
 
 ## Slack webhook, This will help you to get notified about errors and exceptions.
 slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
