@@ -25,7 +25,7 @@
     pip install -r requirements.txt
     ```
 
-* Open up `windows.py` in your favourite [text editor](https://github.com/404notfound-3/rpad) and
+* Open up `config.py` in your favourite [text editor](https://github.com/404notfound-3/rpad) and
     * Replace timezone according to your country or state.
         ```
         TimeZone = "Asia/Kolkata"
@@ -45,7 +45,7 @@
         ```
         slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
         ```
-    Congratulations! you are ready to go, now run `windows.py`
+    Congratulations! you are ready to go, now run `windows.py` .  Ping [me](https://facebook.com/404notfound.3) if ever face any error.
 
 ## For linux
 * Install firefox, xvfb and Tor for linux
@@ -66,7 +66,7 @@
     ```
 * Edit torrc file.
     ```
-    sudo echo -e "SOCKSPort 9050\nControlPort 9051\nCookieAuthentication 1\n$(cat /etc/tor/torrc)" > /etc/tor/torrc
+    sudo echo -e "SOCKSPort 9050\nControlPort 9051\n$(cat /etc/tor/torrc)" > /etc/tor/torrc
     ```
 * Restart Tor service.
     ```
@@ -78,7 +78,7 @@
     cd ig-profile-scraper/
     pip install -r requirements.txt
     ```
-* Open `linux.py` in your favourite text editor and
+* Open `config.py` in your favourite text editor and
 
     * Replace timezone according to your country or state.
         ```
@@ -100,4 +100,4 @@
         ```
         slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
         ```
-    Congratulations! you are ready to go, now run `linux.py`
+    Congratulations! you are ready to go, now run `linux.py`. Ping [me](https://facebook.com/404notfound.3) if ever face any error.

@@ -36,10 +36,10 @@ You can get step by step detailed Installation steps [here](readme_media/INSTALL
     pip install -r requirements.txt
     ```
 
-* Open up `windows.py` or `linux.py` in your favourite [text editor](https://github.com/404notfound-3/rpad) and
+* Open up `config.py` in your favourite [text editor](https://github.com/404notfound-3/rpad) and
     * Replace timezone according to your country or state.
         ```
-        TimeZone = "Asia/Kolkata"
+        TIMEZONE = timezone("Asia/Kolkata")
         ```
     * Add your temporary insta ids in ids dictonary.
         ```
@@ -53,19 +53,18 @@ You can get step by step detailed Installation steps [here](readme_media/INSTALL
         usernames = ["<USERNAME1>", "<USERNAME2>"]
         ```
 
-    * Edit torrc file and Restart Tor service.
-        ```
-        sudo echo -e "SOCKSPort 9050\nControlPort 9051\nCookieAuthentication 1\n$(cat /etc/tor/torrc)" > /etc/tor/torrc
-        sudo service tor restart
-        ```
-
     * Add your Slack webhook URL to get notified about errors and exceptions while running this scraper.
         ```
         slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
         ```
 
+<!-- * Edit torrc file and Restart Tor service (only for linux).
+    ```
+    sudo echo -e "SOCKSPort 9050\nControlPort 9051\n$(cat /etc/tor/torrc)" > /etc/tor/torrc
+    sudo service tor restart
+    ``` -->
+Congratulations! you are ready to go, now run `windows.py` or `linux.py`.  Ping [me](https://facebook.com/404notfound.3) if ever face any error.
 
-Congratulations! you are ready to go, now run `windows.py` or `linux.py`
 
 # Features
 1. Profile Scraping
@@ -82,7 +81,7 @@ Congratulations! you are ready to go, now run `windows.py` or `linux.py`
 4. Random sleep time (to create a little randomness).
 5. Autologin and auto logout (to switch ids after every 8 hours).
 6. Automatic browser screenshots in `ss_log/browser` folder.
-7. Slack webhook to get error notifications
+7. Slack webhook Integration to get error notifications
 8. Tor connectivity and public ip check
 
 # License
