@@ -58,12 +58,7 @@ You can get step by step detailed Installation steps [here](readme_media/INSTALL
         slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
         ```
 
-<!-- * Edit torrc file and Restart Tor service (only for linux).
-    ```
-    sudo echo -e "SOCKSPort 9050\nControlPort 9051\n$(cat /etc/tor/torrc)" > /etc/tor/torrc
-    sudo service tor restart
-    ``` -->
-Congratulations! you are ready to go, now run `windows.py` or `linux.py`.  Ping [me](https://facebook.com/404notfound.3) if ever face any error.
+Congratulations! you are ready to go, now run `scraper.py` .  Ping [me](https://facebook.com/404notfound.3) if you ever face any kind of error.
 
 
 # Features

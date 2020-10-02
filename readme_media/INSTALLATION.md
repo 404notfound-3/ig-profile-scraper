@@ -45,7 +45,7 @@
         ```
         slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
         ```
-    Congratulations! you are ready to go, now run `windows.py` .  Ping [me](https://facebook.com/404notfound.3) if ever face any error.
+    Congratulations! you are ready to go, now run `scraper.py` .  Ping [me](https://facebook.com/404notfound.3) if ever face any error.
 
 ## For linux
 * Install firefox, xvfb and Tor for linux
@@ -100,4 +100,4 @@
         ```
         slack = Slack(url = "<<ADD_YOUR_SLACK_WEBHOOK_URL_HERE>>")
         ```
-    Congratulations! you are ready to go, now run `linux.py`. Ping [me](https://facebook.com/404notfound.3) if ever face any error.
+    Congratulations! you are ready to go, now run `scraper.py`. Ping [me](https://facebook.com/404notfound.3) if ever face any error.

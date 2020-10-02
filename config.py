@@ -9,6 +9,7 @@ from requests import get
 from bs4 import BeautifulSoup as bs
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 
+
 TIMEZONE = timezone("Asia/Kolkata")
 URL = "https://instagram.com/{}/"
 SOCKSPort = 9050 ## Tor SOCKS listner port
@@ -60,6 +61,7 @@ def lps(prefix, string, color):
 def lprint(prefix, string, color):
     cprint(f"{prefix}[{timee()}][{date()}] {string}", color)
 
+
 def get_tor_ip():
     return get("http://httpbin.org/ip", proxies = proxies).text.split('"')[3]
 def renew_tor_ip():
@@ -71,9 +73,10 @@ def renew_tor_ip():
         time.sleep(5)
     ip_after_renewel = get_tor_ip()
     if (ip_before_renewel != ip_after_renewel):
-        lprint(f"[+]", f"Tor IP renewel confirmed, new ip appears to be {ip_after_renewel}", "green")
+        lprint("[+]", f"Tor IP renewel confirmed, new ip appears to be {ip_after_renewel}", "green")
     else:
-        lprint("[!]", "Tor IP renewel faild!, trying again...", "red"), renew_tor_ip()
+        lprint("[!]", "Tor IP renewel faild!, trying again...", "red")
+        renew_tor_ip()
 ## to verify Tor connectivity
 def check_tor_conn():
     title = str(bs(get("https://check.torproject.org", proxies = proxies).text, "html.parser").title).split("\n")[2]
